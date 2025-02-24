@@ -6,6 +6,7 @@ Based on [this tutorial](https://www.youtube.com/watch?v=iFOEU6YNBzw).
 - `composer` installed locally
 
 ## steps to recreate
+These are general instructions. look at commit history for change in code. 
 
 - we will add a seperate model for drivers and apply migrations
 ```bash
