@@ -43,7 +43,8 @@ class LoginNeedsVerification extends Notification
         ]);
 
         return (new TwilioSmsMessage())
-        -> content("Your rideshare otp code is {loginCode}. don't share this code");
+        -> content("Your rideshare otp code is {$loginCode}. don't share this code");
+
     }
     /**
      * Get the array representation of the notification.

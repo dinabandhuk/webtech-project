@@ -12,7 +12,7 @@ class LoginController extends Controller
     {
         //validate phone number
         $request->validate([
-            'phone' => 'required|min:10',
+            'phone' => 'required|numeric|min:10',
         ]);
 
 
@@ -53,7 +53,7 @@ class LoginController extends Controller
             $user->update([
                 'login_code'=>null
             ]);
-            return $user->createToken($request->login_code ) ->plainTextToken;
+            return $user->createToken($request->login_code)->plainTextToken;
         }
 
         // if invalid otp return back a message
