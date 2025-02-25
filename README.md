@@ -229,5 +229,6 @@ php artisan reverb:start
 ```
 - install tailwindcss
 ```bash
-npm install tailwindcss @tailwindcss/vite```
+npm install tailwindcss @tailwindcss/vite
+```
 - initialize 
