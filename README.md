@@ -199,3 +199,19 @@ X-Powered-By: PHP/8.4.4
     "user_id": 5
 }
 ```
+
+- websocket events 
+```bash
+php artisan make:event TripStarted
+php artisan make:event TripEnded
+php artisan make:event TripAccepted
+php artisan make:event TripLocationUpdated
+```
+- install laravel websockets
+```bash
+php artisan install:broadcasting
+```
+- the server may be started via 
+```bash
+php artisan reverb:start
+```
