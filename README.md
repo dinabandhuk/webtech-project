@@ -2,13 +2,18 @@
 Ride sharing app with laravel backend and Vue frontend. \
 Based on [this tutorial](https://www.youtube.com/watch?v=iFOEU6YNBzw).
 
+- > Check the tags for releases and major checkpoints in the project.
+---
 ### Lesson learned
 - > Check the api and functionality after every change to avoid hours of misdirected debugging.
+---
+# Laravel Backend
+
 ## Requirements
 - `composer` installed locally
 
 ## Steps to recreate
-These are general instructions. look at commit history for change in code. 
+These are general instructions. Look at commit history for change in code. This is for my personal reference so it's not expected to be understood by third party.
 
 - we will add a seperate model for drivers and apply migrations
 ```bash
@@ -70,7 +75,7 @@ http POST localhost:8000/api/login/ phone=1234567890
  ```
 
 This returns a response :
-```json
+```bash
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Cache-Control: no-cache, private
@@ -92,7 +97,7 @@ X-Powered-By: PHP/8.4.4
 - Similar for `/api/driver` `GET` request
 
 - to update the driver then follow
-```json
+```bash
 [mounam@moksha backend (main)]$ http POST localhost:8000/api/driver 'Authorization: Bearer 1|vUnadHCCJmxlvkoE2Bh99BIwKXlzfWqhTjsyFy2k0bcd87d2' Accept:application/json color=white license_plate=ba50pa2020 make=toyota model=yaris name=dinabandhu year=2004
 
 HTTP/1.1 200 OK
@@ -131,7 +136,7 @@ X-Powered-By: PHP/8.4.4
 ```
 
 - so the trip was created like so 
-```json
+```bash
 [mounam@moksha backend (main)]$ http POST localhost:8000/api/trip 'Authorization: Bearer 1|vUnadHCCJmxlvkoE2Bh99BIwKXlzfWqhTjsyFy2k0bcd87d2' destination_name=Lalitpur destination:='{"lat":12.345, "lng":67.890}' origin:='{"lat": 45.56, "lng": 23.56}
 '
 HTTP/1.1 201 Created
@@ -161,7 +166,7 @@ X-Powered-By: PHP/8.4.4
 ```
 
 - get the trip info for trip id (also don't forget to write $request->user()->id on app/Http/Controllers/TripController.php and not $request->user->id and spend an hour debugging)
-```json
+```bash
 [mounam@moksha backend (main)]$ http GET localhost:8000/api/trip/1 'Authorization: Bearer 1|vUnadHCCJmxlvkoE2Bh99BIwKXlzfWqhTjsyFy2k0bcd87d2'
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
@@ -215,3 +220,14 @@ php artisan install:broadcasting
 ```bash
 php artisan reverb:start
 ```
+---
+# Vue Frontend 
+
+- init vue project 
+```bash 
+[mounam@moksha frontend (main)]$ npm init vue@latest .
+```
+- install tailwindcss
+```bash
+npm install tailwindcss @tailwindcss/vite```
+- initialize 
