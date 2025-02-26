@@ -1,4 +1,4 @@
-# Ride sharing app
+# Ride sharing app with Laravel and VueJS
 
 Ride sharing app with laravel backend and Vue frontend. \
 Based on [this tutorial](https://www.youtube.com/watch?v=iFOEU6YNBzw).
