@@ -29,11 +29,28 @@
 
 import { VueLocationIQ } from "vue-location-iq";
 import "vue-location-iq/dist/style.css";
-import { ref } from "vue";
+import { ref, isProxy, toRaw} from "vue";
+import {useLocationStore} from '@/stores/location'
+
 
 const search = ref("");
 
+const location = useLocationStore();
 const handleLocationChanged = (e) => {
     console.log('handle location changed', e)
+    const rawObjectOrArray = toRaw(e)    
+    console.log(rawObjectOrArray)
+    const {lat, lon, display_address, display_place} = rawObjectOrArray[0]
+    console.log(lat, lon, display_address, display_place)
+    location.$patch({
+        destination: {
+            name: display_place,
+            address: display_address,
+            geometry: {
+                lat: lat,
+                lng: lon
+            }
+        }
+    })
 }
 </script>
