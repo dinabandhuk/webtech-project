@@ -13,11 +13,12 @@
             </div>
           </div>
           <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
-            <button 
+            <button
+            @click.prevent="handleSelectLocation"
             type="button"
             class="inline-flex justify-center rounded-md border border-transparent bg-black px-4 py-2 text-white"
             >
-              Find a driver
+              Find a ride
             </button>
           </div>
         </div>
@@ -31,8 +32,9 @@ import { VueLocationIQ } from "vue-location-iq";
 import "vue-location-iq/dist/style.css";
 import { ref, isProxy, toRaw} from "vue";
 import {useLocationStore} from '@/stores/location'
+import { useRouter } from "vue-router";
 
-
+const router = useRouter()
 const search = ref("");
 
 const location = useLocationStore();
@@ -53,4 +55,13 @@ const handleLocationChanged = (e) => {
         }
     })
 }
+
+const handleSelectLocation = () => {
+    if(location.destination.name != '') {
+        router.push({
+            name: 'map'
+       })
+    }
+}
+
 </script>

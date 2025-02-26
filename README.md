@@ -344,7 +344,18 @@ length: 1
 <prototype>: Array []
 ​
 <handler>: Object { _isReadonly: false, _isShallow: false }
+...
 ```
+
+- this is a proxy object and needs to be turned into an array for data extraction. Vue has functions for that[^3]
+
+```javascript
+import { isProxy, toRaw } from 'vue';
+isProxy(reactiveObjectOrArray) ? 'yup' : 'nope'
+const rawObjectOrArray = toRaw(reactiveObjectOrArray)
+```
+
+- now destructure and assign values to variables needed for our use . Lat, Longtitude, name and address only.
 
 ---
 
@@ -354,3 +365,4 @@ length: 1
 
 [^2]: [Vue Locationiq autocomplete demo](https://vue-location-iq-demo.vercel.app/)
 
+[^3]: [Vue Methods to help with proxies](https://stackoverflow.com/a/70805174)
