@@ -301,7 +301,50 @@ npm install -D axios
 
 - Add location autocomplete[^2] with [vue-location-iq](https://github.com/bigboggy/vue-location-iq)
 
-- 
+- Whenever a user clicks enter and selects a location we get a response from [api.locationiq.com]
+
+```json
+handle location changed 
+Proxy { <target>: (1) […], <handler>: {…} }
+​
+<target>: Array [ {…} ]
+​​
+0: Object { place_id: "322142491309", osm_id: "67157058", osm_type: "node", … }
+​​​
+address: Object { name: "Kathmandu", county: "Kathmandu", state: "Bagmati Province", … }
+​​​
+boundingbox: Array(4) [ "27.548317", "27.868317", "85.1605817", … ]
+​​​
+class: "place"
+​​​
+display_address: "Bagmati Province, 46000, Nepal"
+​​​
+display_name: "Kathmandu, Kathmandu, Bagmati Province, 46000, Nepal"
+​​​
+display_place: "Kathmandu"
+​​​
+lat: "27.708317"
+​​​
+licence: "https://locationiq.com/attribution"
+​​​
+lon: "85.3205817"
+​​​
+osm_id: "67157058"
+​​​
+osm_type: "node"
+​​​
+place_id: "322142491309"
+​​​
+type: "city"
+​​​
+<prototype>: Object { … }
+​​
+length: 1
+​​
+<prototype>: Array []
+​
+<handler>: Object { _isReadonly: false, _isShallow: false }
+```
 
 ---
 
