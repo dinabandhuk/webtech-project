@@ -16,11 +16,11 @@ const router = createRouter({
       name: 'landing',
       component: LandingView,
     },
-  ],
+  ]
 })
 
 router.beforeEach((to, from) =>{
-  if(to.name === 'login'){
+  if(to.name == 'login'){
     return true
   }
   if(!localStorage.getItem('token')) {
@@ -37,13 +37,16 @@ const checkTokenAuthenticity = () => {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     }
   })
-  .then((response) => {})
-  .catch((error) => {
-    localStorage.removeItem('token')
-    router.push({
-      name: 'login'
+    .then((response) => {
+      console.log(response.data)
     })
-  })
+    .catch((error) => {
+      localStorage.removeItem('token')
+      router.push({
+        name: 'login'
+      })
+      console.error(error)
+    })
 }
 
 

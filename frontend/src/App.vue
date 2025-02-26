@@ -1,9 +1,9 @@
 <script setup>
-import LoginView from './views/LoginView.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
   <div class="min-h-screen bg-gray-100 text-center antialiased">
-  <LoginView />
+  <RouterView />
   </div>
 </template>

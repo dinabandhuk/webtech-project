@@ -55,7 +55,7 @@
   
   <script setup>
 import {vMaska} from 'maska/vue'
-import { computed, onMounted, reactive, ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 
@@ -66,7 +66,7 @@ const credentials = reactive({
   login_code: null,
 })
 
-// checks if user is already logged in and redirects to landing page if token is found
+// checks if user is already logged in and redirects to landing page if token is found 
 onMounted(()=>{
   if(localStorage.getItem('token')){
     router.push({
@@ -100,7 +100,7 @@ const handleVerification =  () =>{
   axios.post('http://localhost:8000/api/login/verify', formattedCredentials())
   .then((response) => {
     console.log(response.data) // this should be the authentication token
-    localStorage.setItem('token', response.data)
+    localStorage.setItem('token', response.data) // store the token
     router.push({
       name: 'landing'
     })

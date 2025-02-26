@@ -292,3 +292,5 @@ npm install -D axios
 - The user can now enter their number and click `submit`. Then the `verification` form appears and upon clicking `verify` they get an authentication token back if the valid OTP was entered.
 
 - User will be redirected to login page if token is invalid or OTP is invalid
+
+- User will be auto redirected to landing page if they were already logged in before (had a stored `token`)
