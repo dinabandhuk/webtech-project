@@ -1,4 +1,4 @@
-# webtech-project
+# Ride sharing app
 
 Ride sharing app with laravel backend and Vue frontend. \
 Based on [this tutorial](https://www.youtube.com/watch?v=iFOEU6YNBzw).
@@ -7,10 +7,14 @@ Based on [this tutorial](https://www.youtube.com/watch?v=iFOEU6YNBzw).
 >
 ---
 
-### Lesson learned
+## Lesson learned
 >
 - > Check the api and functionality after every change to avoid hours of misdirected debugging.
 >
+---
+
+**Author** : Dinabandhu
+
 ---
 
 # Laravel Backend
@@ -275,7 +279,7 @@ npm install tailwindcss @tailwindcss/vite
 
 - initialize tailwind.config.js
 
-- install maska as dev dependency for hiding form input
+- install maska as dev dependency for masking form input into proper format
 
 ```bash
 npm install -D maska
@@ -289,8 +293,21 @@ npm install -D axios
 
 - see release tag v0.2 for a working login page that successfully sends OTP to the number
 
-- The user can now enter their number and click `submit`. Then the `verification` form appears and upon clicking `verify` they get an authentication token back if the valid OTP was entered.
+- The user can now enter their number and click `submit`. Then the `verification` form appears and upon clicking `verify` they get an authentication `token` back if valid OTP was entered.
 
-- User will be redirected to login page if token is invalid or OTP is invalid
+- User will be redirected to login page if `token` is invalid or OTP is invalid
 
 - User will be auto redirected to landing page if they were already logged in before (had a stored `token`)
+
+- Add location autocomplete[^2] with [vue-location-iq](https://github.com/bigboggy/vue-location-iq)
+
+- 
+
+---
+
+## References
+
+[^1]: [Openstreetmap Vuejs Integration](https://medium.com/@jadhavshivam0228/open-street-maps-vuejs-integration-39c39b85b5bc)
+
+[^2]: [Vue Locationiq autocomplete demo](https://vue-location-iq-demo.vercel.app/)
+

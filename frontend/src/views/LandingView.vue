@@ -10,6 +10,7 @@
             Start Driving
           </button>
           <button
+            @click="handleFindARide"
             class="inline-flex justify-center rounded-md border border-transparent bg-black px-4 py-2 text-white"
           >
             Find a ride
@@ -21,5 +22,14 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
+
+
+const router = useRouter()
+const handleFindARide = () => {
+  router.push({
+    name: 'location'
+  })
+}
 
 </script>
