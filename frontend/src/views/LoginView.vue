@@ -55,20 +55,37 @@
   
   <script setup>
 import {vMaska} from 'maska/vue'
-import { reactive, ref } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import axios from 'axios'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const credentials = reactive({
   phone: null,
   login_code: null,
 })
 
+// checks if user is already logged in and redirects to landing page if token is found
+onMounted(()=>{
+  if(localStorage.getItem('token')){
+    router.push({
+      name: 'landing'
+    })
+  }
+})
+
+const formattedCredentials = () => {
+  return {
+    phone: credentials.phone.replaceAll(' ', '').replace('(', '').replace(')', ''),
+    login_code: credentials.login_code,
+  }
+}
+
 const waitingOnVerification = ref(false)
 
 const handleLogin = () =>{
-  axios.post('http://localhost:8000/api/login', {
-    phone : credentials.phone.replaceAll(' ', '').replace('(', '').replace(')', '')
-  })
+  axios.post('http://localhost:8000/api/login', formattedCredentials())
   .then((response) =>{
     console.log(response.data)
     waitingOnVerification.value = true
@@ -80,12 +97,13 @@ const handleLogin = () =>{
 }
 
 const handleVerification =  () =>{
-  axios.post('http://localhost:8000/api/login/verify', {
-    phone : credentials.phone.replaceAll(' ', '').replace('(', '').replace(')', ''),
-    login_code: credentials.login_code
-  })
+  axios.post('http://localhost:8000/api/login/verify', formattedCredentials())
   .then((response) => {
     console.log(response.data) // this should be the authentication token
+    localStorage.setItem('token', response.data)
+    router.push({
+      name: 'landing'
+    })
   })
   .catch((error) =>{
     console.error(error)
