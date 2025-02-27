@@ -357,12 +357,8 @@ const rawObjectOrArray = toRaw(reactiveObjectOrArray)
 
 - now destructure and assign values to variables needed for our use . Lat, Longtitude, name and address only.
 
+- project stopped till I get google maps api key
+
 ---
 
 ## References
-
-[^1]: [Openstreetmap Vuejs Integration](https://medium.com/@jadhavshivam0228/open-street-maps-vuejs-integration-39c39b85b5bc)
-
-[^2]: [Vue Locationiq autocomplete demo](https://vue-location-iq-demo.vercel.app/)
-
-[^3]: [Vue Methods to help with proxies](https://stackoverflow.com/a/70805174)
