@@ -359,6 +359,11 @@ const rawObjectOrArray = toRaw(reactiveObjectOrArray)
 
 - project stopped till I get google maps api key
 
+- I was getting errors adding my prepaid international visa card from a nepali bank as payment method in google cloud console.
+  - **Solution** : I created a new payments profile (so now my google account has the default and the actually working profile) and specified organization as `person` and filled in other details as in my legal documents. Then google recognized the visa card somehow and I got the api key.
+  
+  ![google console new payments profile](./images/google_maps_api.png)
+
 ---
 
 ## References
