@@ -13,7 +13,49 @@ Based on [this tutorial](https://www.youtube.com/watch?v=iFOEU6YNBzw).
 >
 ---
 
-**Author** : Dinabandhu
+**Author** : Dinabandhu Khatiwada
+
+---
+
+## Installation
+
+```bash
+git clone https://github.com/dinabandhuk/webtech-project.git
+cd webtech-project/frontend
+npm install
+cd ../backend
+composer install && composer require laravel-notification-channels/twilio
+ && php artisan migrate
+```
+
+```bash
+backend $ touch .env
+```
+
+- now fill in the following details in your `.env` file
+
+```bash
+TWILIO_ACCOUNT_SID=
+TWILIO_AUTH_TOKEN=
+TWILIO_FROM=
+```
+
+- add this to vite.config.js
+
+```bash
+  optimizeDeps: {
+    include: [
+      "@fawmi/vue-google-maps",
+      "fast-deep-equal",
+    ],
+```
+
+Run the servers :
+
+```bash
+frontend $ npm run dev
+backend $ php artisan serve
+```
 
 ---
 
@@ -27,7 +69,7 @@ Based on [this tutorial](https://www.youtube.com/watch?v=iFOEU6YNBzw).
 
 These are general instructions. Look at commit history for change in code. This is for my personal reference so it's not expected to be understood by third party.
 
-- we will add a seperate model for drivers and apply migrations
+- we will add a separate model for drivers and apply migrations
 
 ```bash
 backend $ php artisan make:model Driver --migration
@@ -363,6 +405,9 @@ const rawObjectOrArray = toRaw(reactiveObjectOrArray)
   - **Solution** : I created a new payments profile (so now my google account has the default and the actually working profile) and specified organization as `person` and filled in other details as in my legal documents. Then google recognized the visa card somehow and I got the api key.
   
   ![google console new payments profile](./images/google_maps_api.png)
+
+[https://console.cloud.google.com/freetrial/signup/billing/NP](https://console.cloud.google.com/freetrial/signup/billing/NP)
+
 
 ---
 
