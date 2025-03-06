@@ -414,6 +414,8 @@ const rawObjectOrArray = toRaw(reactiveObjectOrArray)
 
 [https://console.cloud.google.com/freetrial/signup/billing/NP](https://console.cloud.google.com/freetrial/signup/billing/NP)
 
+Directions API is now legacy and cannot be used anymore by new keys since 1st March 2025. Update the map to
+use Routes api to show path from origin to destination.
 
 ---
 

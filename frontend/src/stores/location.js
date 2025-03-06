@@ -28,8 +28,8 @@ export const useLocationStore = defineStore('location', () => {
   const updateCurrentLocation = async() => {
     const userLocation = await getUserLocation()
     current.geometry = {
-      lat: userLocation.lat,
-      lng: userLocation.lng
+      lat: userLocation.coords.latitude,
+      lng: userLocation.coords.longitude
     }
   }
 
