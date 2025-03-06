@@ -50,6 +50,12 @@ TWILIO_FROM=
     ],
 ```
 
+- add google places api key to frontend/.env file
+
+```bash
+VITE_GOOGLE_MAP_API_KEY=
+```
+
 Run the servers :
 
 ```bash
